@@ -73,7 +73,7 @@ CREATE TABLE `escola` (
   `id` int(11) NOT NULL,
   `id_cidade` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `bairo` varchar(20) NOT NULL,
+  `bairro` varchar(20) NOT NULL,
   `rua` varchar(50) NOT NULL,
   `cep` int(11) NOT NULL,
   `telefone` int(11) NOT NULL,
