@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 
 <?php 
-include("config.php");
-include("Connection.php"); 
-include("listaSeries.php");
-include("listaTurnos.php");
+include_once "config.php";
+include_once "conectaBanco.php"; 
+include_once"listaSeries.php";
+include_once"listaTurnos.php";
+
+$conexao = new Connection();
+$conexao->connect($host, $user, $password, $database);
+
+
 $liSe = listaSeries($conexao);
 $liTu = listaTurnos($conexao); 
 ?>
@@ -26,7 +31,7 @@ $liTu = listaTurnos($conexao);
     <!-- Barra de Navegação -->
     <div class="top bar white wide padding card">
       <!-- Botão da Esquerda (redirecionando para a pag principal)-->
-      <a href="index.php" class="bar-item button"><span class="italiana"><b>Agente</b></span> da Transformação</a>
+      <a href="index.php" class="bar-item button"><span class="italiana"><b>Escola</b></span> em Dia</a>
     </div>
 
     <br><br><br><br>

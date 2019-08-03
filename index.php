@@ -19,7 +19,7 @@ include_once "cabecalho.php";
 
     $conexao->connect($host, $user, $password, $database);
 
-    $string = "SELECT  id as id, nome as titulo, rua as r, bairo as b, cep as cep, nota as n FROM escola ";
+    $string = "SELECT  id as id, nome as titulo, rua as r, bairro as b, cep as cep, nota as n FROM escola ";
     $conexao->query($string);
     $total = $conexao->num_rows();
 
