@@ -72,13 +72,13 @@ CREATE TABLE `escola` (
   `id` int(11) NOT NULL,
   `id_cidade` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `bairro` varchar(20) NOT NULL,
+  `bairro` varchar(50) NOT NULL,
   `rua` varchar(50) NOT NULL,
   `cep` int(11) NOT NULL,
   `telefone` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `diretor` varchar(50) NOT NULL,
-  `adjunto` varchar(50) DEFAULT NULL,
+  `diretor` varchar(100) NOT NULL,
+  `adjunto` varchar(100) DEFAULT NULL,
   `nota` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
