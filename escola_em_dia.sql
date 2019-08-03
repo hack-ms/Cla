@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Ago-2019 às 18:06
+-- Generation Time: 03-Ago-2019 às 20:14
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `aluno` (
   `id` int(11) NOT NULL,
   `id_escola` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `serie` varchar(20) NOT NULL,
   `senha` varchar(100) NOT NULL
