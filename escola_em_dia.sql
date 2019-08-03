@@ -122,7 +122,7 @@ CREATE TABLE `replica` (
 
 CREATE TABLE `series` (
   `id` int(11) NOT NULL,
-  `nome` varchar(20) DEFAULT NULL
+  `nome` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -130,18 +130,18 @@ CREATE TABLE `series` (
 --
 
 INSERT INTO `series` (`id`, `nome`) VALUES
-(1, '1° ano fundamental'),
-(2, '2° ano fundamental'),
-(3, '3° ano fundamental'),
-(4, '4° ano fundamental'),
-(5, '5° ano fundamental'),
-(6, '6° ano fundamental'),
-(7, '7° ano fundamental'),
-(8, '8° ano fundamental'),
-(9, '9° ano fundamental'),
-(10, '1° ano medio'),
-(11, '2° ano medio'),
-(12, '3° ano medio');
+(1, '1&#176; ano fundamental'),
+(2, '2&#176; ano fundamental'),
+(3, '3&#176; ano fundamental'),
+(4, '4&#176; ano fundamental'),
+(5, '5&#176; ano fundamental'),
+(6, '6&#176; ano fundamental'),
+(7, '7&#176; ano fundamental'),
+(8, '8&#176; ano fundamental'),
+(9, '9&#176; ano fundamental'),
+(10, '1&#176; ano medio'),
+(11, '2&#176; ano medio'),
+(12, '3&#176; ano medio');
 
 -- --------------------------------------------------------
 
