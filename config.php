@@ -1,8 +1,13 @@
 <?php
-	$conexao = mysqli_connect("localhost", "padrao", "", "escola_em_dia");
-	$host = "localhost";
-	$user = "padrao";
+	/*$host = "localhost";
+	$user = "root";
 	$password = "";
-	$database = "escola_em_dia";
-	$url="http://localhost/Escola/";
+	$database = "escola_em_dia";*/
+
+	$host = 'localhost';
+
+	$database = 'id10383139_escola_em_dia';
+	$user = 'id10383139_admin';
+	$password = 'bancoescolaemdia';
+	$url = "http://localhost:8080/Escola/";
 ?>
