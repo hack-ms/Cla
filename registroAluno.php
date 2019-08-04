@@ -7,6 +7,7 @@ include("conectaBanco.php");
 	
 	//verifica se os campos estão, de fato, preenchidos. Além de impedir SQLInjection
   
+    
 	if(empty($_POST['email'])==FALSE){
 		$email = addslashes(trim($_POST['email']));
 	}else{
@@ -14,13 +15,9 @@ include("conectaBanco.php");
 	}
 	if(empty($_POST['escola'])==FALSE){
 		$escola = addslashes(trim($_POST['escola']));
+		echo "escola";
 	}else{
 		$escola = false;
-	}
-	if(empty($_POST['serie'])==FALSE){
-		$serie = addslashes(trim($_POST['serie']));
-	}else{
-		$serie = false;
 	}
 
 	if(empty($_POST['serie'])==FALSE){
@@ -35,7 +32,7 @@ include("conectaBanco.php");
 	}
 	//fim da verificação
 	//força o usuario a preencher os campos, caso algum deles esteja vazio
-	if($senha == false || $serie == false ||$escola == false || $email == false ){
+	if($senha == false || $serie == false ||$escola == false || $email == false ){ echo "entrou";
 		$conexao->close();
 	}else{
 	//verifica se não existem users com o mesmo nome	

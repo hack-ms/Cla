@@ -9,5 +9,5 @@
 	$database = 'id10383139_escola_em_dia';
 	$user = 'id10383139_admin';
 	$password = 'bancoescolaemdia';
-	$url = "https://escolaemdia.tk/";
+	$url = "https://escolaemdia.000webhostapp.com/";
 ?>

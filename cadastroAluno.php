@@ -29,13 +29,13 @@ $conexao->connect($host, $user, $password, $database);
 	echo "Nenhuma escola encontrada";
 	$conexao->close();
 	}
-		$string = "SELECT  escola.nome FROM escola ";
+
+		$string = "SELECT  escola.id, escola.nome FROM escola ";
          $conexao->query($string);
         $total = $conexao->num_rows();
 
 	 $liEs = array();
     if($total == TRUE){
-
 		for($li2 = $conexao->fetch_assoc(); $li2 != NULL; $li2 = $conexao->fetch_assoc()) {
 			 array_push($liEs, $li2);
 		}	
@@ -46,7 +46,7 @@ $conexao->connect($host, $user, $password, $database);
 	echo "Nenhuma escola encontrada";
 	$conexao->close();
 	}
-	$conexao->close();
+//	$conexao->close();
 	
 
  ?>
@@ -73,31 +73,33 @@ $conexao->connect($host, $user, $password, $database);
     <div class="content padding display-container content wide flex-center" style="max-width:1564px">
 
       <!-- Seção de Registro -->
-      <div class="container padding-24 third registro">
-        <h3 class="border-bottom padding-8">Cadastrar Aluno</h3>
-        <form method="POST" action="registroAluno.php">
-            <div class="border campo white">
-            <input class="input-registro input-label" type="email" required placeholder=" " id="email" name="email" maxlength="256">
-            <label class="label-label" for="email">Email</label>
-          </div>
-          <div class="border campo white">
-            <input class="input-registro input-label" type="text" required placeholder=" " minlength="2" id="escola" name="escola">
-            <label class="label-label" for="escola">Escola</label>
-          </div>
-            <div class="border campo white">
-			<select name="serie"class="form-control" required>
+		<div class="container padding-24 third registro">
+			<h3 class="border-bottom padding-8">Cadastrar Aluno</h3>
+			<form method="POST" action="registroAluno.php">
+				<div class="border campo white">
+					<input class="input-registro input-label" type="email" required placeholder=" " id="email" name="email" maxlength="256">
+					<label class="label-label" for="email">Email</label>
+				</div>
+				<div class="border campo white">
+				<select name="escola"class="form-control" required>
 					<option value = "">Selecione</option>
-						<?php foreach($liSe as $li) : ?>
+						<?php foreach($liEs as $li) : ?>
 							<option value="<?=$li['id']?>"><?=$li['nome']?></option>
 						<?php endforeach ?>
-			</select>
+				</select>
+				<label class="label-label" for="escola">Escola</label>
+            </div>
+            <div class="border campo white">
+				<select name="serie"class="form-control" required>
+						<option value = "">Selecione</option>
+							<?php foreach($liSe as $li) : ?>
+								<option value="<?=$li['id']?>"><?=$li['nome']?></option>
+							<?php endforeach ?>
+				</select>
             <label class="label-label" for="serie">Série</label>
           </div>
-           
-           
-          
           <div class="border campo white">
-            <input class="input-registro input-label" type="password" required placeholder=" " name="senha1" id="senha1" minlength="8">
+			<input class="input-registro input-label" type="password" required placeholder=" " name="senha1" id="senha1" minlength="8">
             <label class="label-label" for="senha1">Senha (8 ou mais caracteres)</label>
           </div>
           <div class="border campo white">

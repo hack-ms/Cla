@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -65,12 +66,11 @@
     <!-- Fim da Página -->
     </div>
 
-
+    </br></br></br>
     <!-- Rodapé -->
-
-    <?php
-        include "rodape.php"; 
-        ?>
+    <footer class="center black padding-16">
+      <p>Powered by <a href="http://www.ifms.edu.br/home" title="IFMS" target="_blank" class="hover-text-green">IFMS</a> and <a href="https://www.w3schools.com" title="W3" target="_blank" class="hover-text-green">W3Schools</a></p>
+    </footer>
 
 
     <script type="text/javascript" src="formatacao.js"></script>

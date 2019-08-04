@@ -3,15 +3,17 @@ session_start();
 
 echo $_SESSION['idAluno'];
 echo $_SESSION['idEscola'];
+
+
 include_once "conectaBanco.php";
 include_once "config.php";
 
 
 
 
-if($_SESSION['idAluno'] != false){
+if(isset($_SESSION['idAluno']) == true){
 
-
+echo 'entrou';
 
   $conexao = new Connection();
 
@@ -25,7 +27,7 @@ if($_SESSION['idAluno'] != false){
   if(empty($_POST['titulo'])==FALSE)
   {
    $titulo = addslashes(trim($_POST['titulo']));
-
+    echo 't';
   }else
   {
     $titulo = false;
@@ -33,6 +35,7 @@ if($_SESSION['idAluno'] != false){
   if(empty($_POST['assunto'])==FALSE)
   {
     $assunto = addslashes(trim($_POST['assunto']));
+    echo 'a';
   }else
   {
      $assunto = false;
@@ -40,6 +43,7 @@ if($_SESSION['idAluno'] != false){
 
   if(empty($_POST['texto'])==FALSE){
     $texto = trim($_POST['texto']);
+    echo 'txt';
   }else
   {
     $texto = false;
@@ -58,9 +62,9 @@ if($_SESSION['idAluno'] != false){
     $string = "SELECT id from aluno where id like '".$_SESSION['idAluno']."'";
     $conexao->query($string);
     $total = $conexao->num_rows();//verifica se algum linha foi encontrada e retorna booleano
-    if ($total == FALSE)
+    if ($total == TRUE)
     {
-      
+      echo'cadastro';
         $string = "INSERT INTO reclamacao (id_escola_r, id_aluno, titulo, assunto, corpo) VALUES ('".$_SESSION['idEscola']."','".$_SESSION['idAluno']."','".$titulo."', '".$assunto."', '".$texto."')";
         $conexao->query($string);
        
