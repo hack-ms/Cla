@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once "config.php";
 include_once "conectaBanco.php";
 
@@ -35,12 +36,18 @@ include_once "conectaBanco.php";
         <a href="https://escolaemdia.000webhostapp.com/" class="bar-item button"><span class="italiana"><b>Escola em Dia</a></b></span>
 
         <!-- Botões da Direita -->
-        <div class="right hide-small">
-            <a href="entrar.php" class="bar-item button">Login</a>
-          <!-- <a href="#projects" class="bar-item button">Ferramentas</a> -->
-          
-          <a href="contato.php" class="bar-item button">Contato</a>
-          <a href="<?php $url ?>/reportar.php" class="bar-item button">Reportar</a>
+        <div class="right">
+			<?php			
+				if(isset($_SESSION['idAluno']) == TRUE){
+				echo "<a href=\"logout.php\"class=\"bar-item nuttom\">Sair</a></li>";
+				echo "<a href=\"reportar.php\"class=\"bar-item nuttom\">Reportar</a></li>";
+				echo "<a href=\"contato.php\"class=\"bar-item nuttom\">Contato</a></li>";
+				}else{
+				echo "<a href=\"entrar.php\"class=\"bar-item nuttom\">Login</a></li>";
+				echo "<a href=\"reportar.php\"class=\"bar-item nuttom\">Reportar</a></li>";
+				echo "<a href=\"contato.php\"class=\"bar-item nuttom\">Contato</a></li>";
+				}
+			?>          
         </div>
       </div>
     </div>

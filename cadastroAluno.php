@@ -77,6 +77,10 @@ $conexao->connect($host, $user, $password, $database);
 			<h3 class="border-bottom padding-8">Cadastrar Aluno</h3>
 			<form method="POST" action="registroAluno.php">
 				<div class="border campo white">
+					<input class="input-registro input-label" type="nome" required placeholder=" " id="nome" name="nome" maxlength="256">
+					<label class="label-label" for="nome">Nome completo do aluno</label>
+				</div>
+				<div class="border campo white">
 					<input class="input-registro input-label" type="email" required placeholder=" " id="email" name="email" maxlength="256">
 					<label class="label-label" for="email">Email</label>
 				</div>

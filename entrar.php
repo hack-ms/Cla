@@ -49,5 +49,8 @@ include_once "cabecalho.php";
 
     <!-- Fim da Página -->
     </div>
+    <?php
+    include "rodape_bot.php"; ?>
+    <script type="text/javascript" src="formatacao.js"></script>
   </body>
 </html>

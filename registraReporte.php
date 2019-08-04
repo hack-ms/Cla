@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-echo $_SESSION['idAluno'];
-echo $_SESSION['idEscola'];
+
 
 
 include_once "conectaBanco.php";
@@ -82,6 +81,11 @@ echo 'entrou';
     }
   }
 
+}else{
+            echo "<script language='javascript' type='text/javascript'>
+        alert('É preciso estar logado para reportar !!');
+      
+       window.location.href='".$url."'   </script>";
 }
 
 ?>

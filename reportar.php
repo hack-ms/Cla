@@ -1,4 +1,33 @@
+<?php
+     include_once "config.php";
+    include_once "conectaBanco.php";
 
+    
+    $conexao = new Connection();
+    $conexao->connect($host, $user, $password, $database);
+
+
+
+   
+    $string = "SELECT  * FROM assunto ";
+    $conexao->query($string);
+    $total = $conexao->num_rows();
+
+    $liSe = array();
+    if($total == TRUE){
+
+		for($li2 = $conexao->fetch_assoc(); $li2 != NULL; $li2 = $conexao->fetch_assoc()) {
+			 array_push($liSe, $li2);
+		}	
+		 $conexao->close();
+	}
+	
+	else {
+	echo "Nenhum assunto encontrado encontrada";
+	$conexao->close();
+	}
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -46,10 +75,14 @@
             <input class="input-registro input-label" type="text" required placeholder=" " id="email-usuario" name="titulo" maxlength="256">
             <label class="label-label" for="email-usuario">Título</label>
           </div>
-
           <div class="border campo white">
-            <input class="input-registro input-label" type="text" required placeholder=" " name="assunto" id="senha1" maxlength="256">
-            <label class="label-label" for="senha1">Assunto </label>
+                <select name="serie"class="form-control" required>
+                        <option value = "">Selecione</option>
+                                <?php foreach($liSe as $li) : ?>
+                                        <option value="<?=$li['id']?>"><?=$li['nome']?></option>
+                                <?php endforeach ?>
+                </select>
+            <label class="label-label" for="assunto">Assunto</label>
           </div>
          
           
@@ -64,13 +97,8 @@
       </div>
 
     <!-- Fim da Página -->
-    </div>
-
-    </br></br></br>
-    <!-- Rodapé -->
-    <footer class="center black padding-16">
-      <p>Powered by <a href="http://www.ifms.edu.br/home" title="IFMS" target="_blank" class="hover-text-green">IFMS</a> and <a href="https://www.w3schools.com" title="W3" target="_blank" class="hover-text-green">W3Schools</a></p>
-    </footer>
+    <?php
+    include "rodape_bot.php"; ?>
 
 
     <script type="text/javascript" src="formatacao.js"></script>

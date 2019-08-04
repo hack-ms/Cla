@@ -58,7 +58,7 @@
 				echo "<script language='javascript' type='text/javascript'>
         alert('Parabéns,login bem sucedido !!');
       
-       window.location.href='".$url."reportar.php'   </script>";
+       window.location.href='".$url."'   </script>";
 						?>
 						<!DOCTYPE html>
 						<html>

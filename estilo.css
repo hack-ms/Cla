@@ -311,7 +311,7 @@ html{
 /* efeito parallax na imagem do cabeçalho */
 .parallax {
   /* imagem usada */
-  background-image: url("imgs/fundoIndex.jpg");
+  background-image: url("imgs/fundoColorido.png");
   height: 700px;
   max-width: 1564px;
   /* efeito parallax */
@@ -322,7 +322,7 @@ html{
 }
 @media (max-width:800px){
   .parallax{
-    background-image: url("imgs/fundoIndexMobile.jpg");
+    background-image: url("imgs/fundoColorido.png");
     height: 500px;
     max-width: 1000px;
 
@@ -418,7 +418,7 @@ html{
 /* usados na pagina REGISTRO.HTML */
 .registro-parallax {
   /* imagem usada */
-  background-image: url("imgs/fundoRegistroCartorio.jpg");
+  background-image: url("imgs/fundoColorido.png");
   /* tamanho */
   height: 100%;
   max-width:200%;
@@ -478,7 +478,7 @@ html{
 /* usados na pagina registroUsuario.php */
 .registro-usuario-parallax{
   /* imagem usada */
-  background-image: url("imgs/fundoRegistroUsuario.jpg");
+  background-image: url("imgs/fundoColorido.png");
   /* tamanho */
   height: 100%;
   max-width:1800px;
