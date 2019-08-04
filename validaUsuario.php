@@ -13,8 +13,8 @@
 	  	session_start();
 
 	  	//Recupera o login
-	  	if(empty($_POST['email']) == FALSE){
-	  		$usuario = addslashes(trim($_POST['email']));
+	  	if(empty($_POST['email-usuario']) == FALSE){
+	  		$usuario = addslashes(trim($_POST['email-usuario']));
 
 	  	}else{
 	  		$usuario = FALSE;
@@ -22,8 +22,8 @@
 	    }
 
 
-	  	if(empty($_POST['senha']) == FALSE){
-	  		$senha = MD5(trim($_POST['senha']));
+	  	if(empty($_POST['senha1']) == FALSE){
+	  		$senha = MD5(trim($_POST['senha1']));
 
 	  	}else{
 	  		$senha = FALSE;
