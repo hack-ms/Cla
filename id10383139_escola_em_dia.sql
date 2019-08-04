@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 04-Ago-2019 às 15:07
+-- Generation Time: 04-Ago-2019 às 15:27
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -208,7 +208,7 @@ CREATE TABLE `reclamacao` (
   `corpo` varchar(700) NOT NULL,
   `data` date DEFAULT NULL,
   `avaliacao` int(11) DEFAULT NULL,
-  `andamento` int(11) DEFAULT NULL
+  `andamento` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
