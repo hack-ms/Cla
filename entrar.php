@@ -22,19 +22,15 @@ include_once "cabecalho.php";
       <!-- Seção de Registro -->
       <div class="container padding-24 third registro">
         <h3 class="border-bottom padding-8">Entrar</h3>
-        <form method="POST" action="registroUsuarioBanco.php">
+        <form method="POST" action="validaUsuario.php">
           
             <div class="border campo white">
             <input class="input-registro input-label" type="email" required placeholder=" " id="email-usuario" name="email-usuario" maxlength="256">
             <label class="label-label" for="email-usuario">Email</label>
           </div>
           
-            
-           
-           
-          
           <div class="border campo white">
-            <input class="input-registro input-label" type="password" required placeholder=" " name="senha1-usuario" id="senha1" minlength="8">
+            <input class="input-registro input-label" type="password" required  name="senha" id="senha1" minlength="8">
             <label class="label-label" for="senha1">Senha </label>
           </div>
          
@@ -53,49 +49,5 @@ include_once "cabecalho.php";
 
     <!-- Fim da Página -->
     </div>
-
-
-    <!-- Rodapé -->
-    <!-- <footer class="center black padding-16">
-      <p>Powered by <a href="http://www.ifms.edu.br/home" title="IFMS" target="_blank" class="hover-text-green">IFMS</a> and <a href="https://www.w3schools.com" title="W3" target="_blank" class="hover-text-green">W3Schools</a></p>
-    </footer> -->
-
-    <script type="text/javascript">
-      // verifica as SENHAS
-      function checksenha_(){
-        //Coloca as senhas em variaveis
-        var senha_1 = document.getElementById('senha1');
-        var senha_2 = document.getElementById('senha2');
-        //Coloca o span 'mensagem' em uma variavel
-        var mensagem = document.getElementById('mensagem');
-        //Cores a serem usadas
-        var verde = "#66cc66";
-        var vermelho = "#ff6666";
-        var branco = '#FFFFFF'
-        //Compara os valores das senhas
-        if(senha_1.value == senha_2.value){//Se as senhas coincidirem
-            //Seta a cor do input pra verde
-            // senha_2.style.backgroundColor = verde;
-            //Seta a mensagem do span para verde e manda a mensagem positiva
-            // mensagem.style.color = verde;
-            // mensagem.innerHTML = "As senhas coincidem!"
-
-            //Seta a cor do input pra branco
-            senha_2.style.backgroundColor = branco;
-            //Seta a mensagem do span para verde e manda a mensagem positiva
-            mensagem.style.color = branco;
-            mensagem.innerHTML = "";
-        }else{//Se as senhas não coincidirem
-            //Seta a cor do input pra vermelho
-            senha_2.style.backgroundColor = vermelho;
-            //Seta a mensagem do span para vermelho e manda a mensagem negativa
-            mensagem.style.color = vermelho;
-            mensagem.innerHTML = "As senhas não coincidem!"
-        }
-      }
-    </script>
-    <script type="text/javascript" src="formatacao.js"></script>
-
-    </script>
   </body>
 </html>

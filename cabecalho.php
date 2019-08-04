@@ -10,7 +10,19 @@ include_once "conectaBanco.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="estilo.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="icones/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icones/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icones/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icones/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icones/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icones/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icones/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icones/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icones/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="icones/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icones/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icones/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icones/favicon-16x16.png">
     <link href="https://fonts.googleapis.com/css?family=Italiana" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   </head>
@@ -20,27 +32,20 @@ include_once "conectaBanco.php";
     <div class="top">
       <div class="bar white wide padding card">
         <!-- Botão da Esquerda -->
-        <a href="<?php $url ?>" class="bar-item button"><span class="italiana"><b>Escola</b></span> em Dia</a>
+        <a href="https://escolaemdia.000webhostapp.com/" class="bar-item button"><span class="italiana"><b>Escola em Dia</a></b></span>
 
         <!-- Botões da Direita -->
         <div class="right hide-small">
             <a href="entrar.php" class="bar-item button">Login</a>
           <!-- <a href="#projects" class="bar-item button">Ferramentas</a> -->
           
-          <a href="#contact" class="bar-item button">Contato</a>
-          <a href="<?php $url ?>/reportar.php" class="bar-item button">REPORTAR</a>
+          <a href="contato.php" class="bar-item button">Contato</a>
+          <a href="<?php $url ?>/reportar.php" class="bar-item button">Reportar</a>
         </div>
       </div>
     </div>
-
-    <!-- Caveçalho -->
-    <!-- <header class="display-container content wide parallax" id="home">
-      <!-- <img class="image" src="fundoIndex.jpg" alt="Architecture" width="1564" height="800"> 
-      <div class="display-middle margin-top center">
-        <h1 class="xxlarge text-white"><span class="italiana padding black opacity-min"><b>LIVING</b></span> <span class="hide-small text-black">Scripture</span></h1>
-      </div>
-    </header>--!>
-
+    
+    </br></br>
 
 
 

@@ -1,16 +1,15 @@
-<?php
+<?php session_start();
+    
 	include_once "conectaBanco.php";
 	include_once "config.php";
-	// if(($_SERVER['HTTP_REFERER'] === 'http://localhost/site/entrar/') || ($_SERVER['HTTP_REFERER'] === 'http://localhost/site/entrar/index.php'))
-	// {
-
+ 
 	  $conexao = new Connection();
 
 	  $conexao->connect($host, $user, $password, $database);
 
 
 	  	//inicia sessoes
-	  	session_start();
+	  	
 
 	  	//Recupera o login
 	  	if(empty($_POST['email-usuario']) == FALSE){
@@ -21,9 +20,9 @@
 	      echo "usuario vazios";
 	    }
 
-
-	  	if(empty($_POST['senha1']) == FALSE){
-	  		$senha = MD5(trim($_POST['senha1']));
+  
+	  	if(empty($_POST['senha']) == FALSE){
+	  		$senha = MD5(trim($_POST['senha']));
 
 	  	}else{
 	  		$senha = FALSE;
@@ -37,19 +36,29 @@
 	      echo "campos vazios";
 	  	}
 	    else{
-	      $string = "SELECT  id, nome, login, senha FROM aluno WHERE login = '".$usuario."'";
+	        
+	      $string = "SELECT  aluno.id as id, escola.id as idEscola, aluno.email as email, senha as senha1 FROM aluno,escola WHERE escola.id = aluno.id_escola and aluno.email = '".$usuario."'";
 
 	    	$conexao->query($string);
 
 	    	if(($dados = $conexao->fetch_assoc()) == TRUE){
 
-	    		if(strcmp($senha, $dados['senha']) == 0){
-
+	    		if(strcmp($senha, $dados['senha1']) == 0){
+                                
 	    			//Tudo ok! Agora passa os dados para a sessão e redireciona o usuario
-	    			$_SESSION['id_usuario'] = $dados['id'];
-	    			$_SESSION['nome_usuario'] = stripslashes($dados['nome']);
-	    			$_SESSION['id'] = $dados['id'];
+	    		/*	$idAluno = $dados['id'];
+	    			$idEscola = $dados['idEscola'];
+                                $dadoV = []
+                                $nome = "cLogin";
+	    			setcookie($nome,) */
+                            $_SESSION['idAluno'] = $dados['id'];
+                            $_SESSION['idEscola'] = $dados['idEscola'];
+	    			
 						$conexao->close();
+				echo "<script language='javascript' type='text/javascript'>
+        alert('Parabéns,login bem sucedido !!');
+      
+       window.location.href='".$url."reportar.php'   </script>";
 						?>
 						<!DOCTYPE html>
 						<html>
@@ -60,22 +69,22 @@
 							<body>
 								<div class="w3-panel w3-green">
 
-									<p>Bem vindo, <?php echo $_SESSION['nome_usuario'];?></p>
+									<p>Bem vindo !</p>
 								</div>
 							</body>
 						</html>
 <?php
 
-	    			header("Refresh:1; url= ../site/");
+	    			
 	    		}else{
 	    			//senha invalida
 	    			$conexao->close();
-	    			login_invalido();
+	    			echo'login errado';
 	          echo "senha errada";
 	    		}
 	    	}else{
 	    		$conexao->close();
-	    		login_invalido();
+	    		echo'login errado';
 	        echo "não sei";
 	    	}
 

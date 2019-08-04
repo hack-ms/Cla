@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 
 <?php 
+include_once "cabecalho.php";
 include_once "config.php";
-include_once "conectaBanco.php"; 
-include_once"listaSeries.php";
-include_once"listaTurnos.php";
+include_once"conectaBanco.php"; 
+
 
 $conexao = new Connection();
 $conexao->connect($host, $user, $password, $database);
 
 
-$liSe = listaSeries($conexao);
-$liTu = listaTurnos($conexao); 
-?>
+
+   
+	$string = "SELECT  * FROM series ";
+    $conexao->query($string);
+    $total = $conexao->num_rows();
+
+	 $liSe = array();
+    if($total == TRUE){
+
+		for($li2 = $conexao->fetch_assoc(); $li2 != NULL; $li2 = $conexao->fetch_assoc()) {
+			 array_push($liSe, $li2);
+		}	
+		 
+	}
+	
+	else {
+	echo "Nenhuma escola encontrada";
+	$conexao->close();
+	}
+		$string = "SELECT  escola.nome FROM escola ";
+         $conexao->query($string);
+        $total = $conexao->num_rows();
+
+	 $liEs = array();
+    if($total == TRUE){
+
+		for($li2 = $conexao->fetch_assoc(); $li2 != NULL; $li2 = $conexao->fetch_assoc()) {
+			 array_push($liEs, $li2);
+		}	
+		 
+	}
+	
+	else {
+	echo "Nenhuma escola encontrada";
+	$conexao->close();
+	}
+	$conexao->close();
+	
+
+ ?>
+
+
+
+
 
 <html>
   <head>
@@ -28,14 +69,6 @@ $liTu = listaTurnos($conexao);
   </head>
   <body class="registro-usuario-parallax">
 
-    <!-- Barra de Navegação -->
-    <div class="top bar white wide padding card">
-      <!-- Botão da Esquerda (redirecionando para a pag principal)-->
-      <a href="index.php" class="bar-item button"><span class="italiana"><b>Escola</b></span> em Dia</a>
-    </div>
-
-    <br><br><br><br>
-
     <!-- Conteudo da Pagina -->
     <div class="content padding display-container content wide flex-center" style="max-width:1564px">
 
@@ -43,10 +76,6 @@ $liTu = listaTurnos($conexao);
       <div class="container padding-24 third registro">
         <h3 class="border-bottom padding-8">Cadastrar Aluno</h3>
         <form method="POST" action="registroAluno.php">
-          <div class="border campo white">
-            <input class="input-registro input-label" type="text" required placeholder=" " id="nome" name="nome" autofocus maxlength="90">
-            <label class="label-label" for="nome">Nome Completo do Aluno</label>
-          </div>
             <div class="border campo white">
             <input class="input-registro input-label" type="email" required placeholder=" " id="email" name="email" maxlength="256">
             <label class="label-label" for="email">Email</label>
@@ -64,15 +93,7 @@ $liTu = listaTurnos($conexao);
 			</select>
             <label class="label-label" for="serie">Série</label>
           </div>
-            <div class="border campo white">
-			<select name="turno"class="form-control" required>
-					<option value = "">Selecione</option>
-						<?php foreach($liTu as $li) : ?>
-							<option value="<?=$li['id']?>"><?=$li['nome']?></option>
-						<?php endforeach ?>
-			</select>
-            <label class="label-label" for="turno">Turno</label>
-          </div>
+           
            
           
           <div class="border campo white">

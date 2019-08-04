@@ -1,6 +1,5 @@
 <?php
-include_once "config.php";
-include_once "conectaBanco.php";
+
 include_once "cabecalho.php";
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +24,7 @@ include_once "cabecalho.php";
 
     $conexao->connect($host, $user, $password, $database);
 
-    $string = "SELECT  id as id, id_escola_r as id_escola_r, titulo as titulo, assunto as assunto, corpo as corpo, data as data, avaliacao as avaliacao, andamento as andamento FROM reclamacao ";
+    $string = "SELECT  reclamacao.id as id,  reclamacao.titulo as titulo, reclamacao.data as data, reclamacao.avaliacao as avaliacao, reclamacao.andamento as andamento FROM reclamacao, escola WHERE reclamacao.id_escola_r  = escola.id and id_escola_r = ".$_GET['id']  ;
     $conexao->query($string);
     $total = $conexao->num_rows();
 
@@ -36,17 +35,16 @@ include_once "cabecalho.php";
             for($dados = $conexao->fetch_assoc(); $dados != NULL; $dados = $conexao->fetch_assoc())
                     {
                     $id = $dados['id'];
-                    $id_escola_r = $dados['id_escola_r'] ;
+                 
                     $titulo = $dados['titulo'] ;
-                    $assunto = $dados['assunto'];
-                    $corpo = $dados['corpo'];
+                   
                     $data = $dados['data'];
                     $avaliacao = $dados['avaliacao'];
                     $andamento = $dados['andamento'];
     echo
 
         '<div class="col  margin-bottom display-container row">
-          <a  target="_blank" href="paginaDenuncia.php">
+          <a  target="_blank" href="paginaDenuncia.php?id='.$id.'">
             <ul class="grey padding borda-baixo">
               '.$titulo.'
             </ul>
@@ -70,5 +68,5 @@ include_once "cabecalho.php";
 
 <?php
 
- include_once "rodape.php"; ?>
+ //include_once "rodape_bot.php"; ?>
 
