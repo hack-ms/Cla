@@ -1,7 +1,7 @@
-<!DOCTYPE html>
 <?php 
 include_once "cabecalho.php";
 ?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Cadastro Usuário</title>
@@ -16,7 +16,7 @@ include_once "cabecalho.php";
   </head>
   <body class="registro-usuario-parallax">
     <!-- Conteudo da Pagina -->
-	</br></br></br></br>
+	<br><br>
     <div class="content padding display-container content wide flex-center" style="max-width:1564px">
 
       <!-- Seção de Registro -->
@@ -30,8 +30,8 @@ include_once "cabecalho.php";
           </div>
           
           <div class="border campo white">
-            <input class="input-registro input-label" type="password" required placeholder=" " name="senha" id="senha1" minlength="8">
-            <label class="label-label" for="senha1">Senha</label>
+            <input class="input-registro input-label" type="password" required  name="senha" id="senha1" minlength="8">
+            <label class="label-label" for="senha1">Senha </label>
           </div>
          
           
@@ -49,8 +49,5 @@ include_once "cabecalho.php";
 
     <!-- Fim da Página -->
     </div>
-    <?php
-    include "rodape_bot.php"; ?>
-    <script type="text/javascript" src="formatacao.js"></script>
   </body>
 </html>

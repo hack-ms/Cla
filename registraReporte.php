@@ -31,12 +31,14 @@ echo 'entrou';
   {
     $titulo = false;
   }//ok
+
   if(empty($_POST['assunto'])==FALSE)
   {
     $assunto = addslashes(trim($_POST['assunto']));
-    echo 'a';
+   
   }else
   {
+      
      $assunto = false;
   }
 
@@ -64,7 +66,10 @@ echo 'entrou';
     if ($total == TRUE)
     {
       echo'cadastro';
-        $string = "INSERT INTO reclamacao (id_escola_r, id_aluno, titulo, assunto, corpo) VALUES ('".$_SESSION['idEscola']."','".$_SESSION['idAluno']."','".$titulo."', '".$assunto."', '".$texto."')";
+		$today = date("m.d.y");
+		$avaliacao = '0';
+		$andamento = 'Em aberto';
+        $string = "INSERT INTO reclamacao (id_escola_r, id_aluno, titulo, id_assunto, corpo, data, avaliacao, andamento) VALUES ('".$_SESSION['idEscola']."','".$_SESSION['idAluno']."','".$titulo."', '1', '".$texto."', '".$today."', '".$avaliacao."', '".$andamento."')";
         $conexao->query($string);
        
         $conexao->close();
@@ -81,11 +86,6 @@ echo 'entrou';
     }
   }
 
-}else{
-            echo "<script language='javascript' type='text/javascript'>
-        alert('É preciso estar logado para reportar !!');
-      
-       window.location.href='".$url."'   </script>";
 }
 
 ?>
