@@ -4,11 +4,7 @@ O website Escola em dia têm como objetivo fomentar a conscientização da socie
 
 # Tecnologias Utilizadas
 
--HTML5;
-
--PHP5;
-
--MySQL.
+Foi desenvolvido utilizando PHP puro, sem nenhum framework, HTML5, CSS, JavaScript e foi usado o MySQL como SGDB.
 
 # Objetivo
 
